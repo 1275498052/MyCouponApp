@@ -1,4 +1,5 @@
-![932a0c97a00195c5a39901ec6ca99ad](https://github.com/1275498052/MyCouponApp/assets/94090705/ef0c2aa9-e0a8-4c4e-9b3f-8e108fad9129)
+![932a0c97a00195c5a39901ec6ca99ad](https://github.com/1275498052/MyCouponApp/assets/94090705/ef0c2aa9-e0a8-4c4e-9b3f-8e108fad9129) ![Uploading 39bc516ef9cf04c7d941c3c43f0df37.jpg…]()
+
 
 MyCouponApp
 • 项目描述：此项目基于MVP架构。视图层包含首页、精选、特惠和搜索四大界面，每个界面有不同的显示风格和内容。用户可以浏览或搜索心仪的商品，通过点击商品或获取淘口令，并跳转到淘宝自动领券。
