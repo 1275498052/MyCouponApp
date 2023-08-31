@@ -15,6 +15,8 @@ MyCouponApp
 3.修改NestedScrollView源码解决嵌套滑动冲突、提前加载和复用问题； 
 4.编写JsonCacheUtils工具类，配合SharedPreferences和Gson辅助实现搜索、历史和推荐记录的缓存与显示。
 
+首页：
 ![932a0c97a00195c5a39901ec6ca99ad](https://github.com/1275498052/MyCouponApp/assets/94090705/e1426d2c-518f-4d6b-aaef-eddb75c0d648)
+搜索：
 ![39bc516ef9cf04c7d941c3c43f0df37](https://github.com/1275498052/MyCouponApp/assets/94090705/0a67c0cd-3253-4e02-b2c8-a19a87b3c758)
 
