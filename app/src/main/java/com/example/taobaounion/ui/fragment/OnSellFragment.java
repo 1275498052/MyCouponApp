@@ -53,7 +53,7 @@ public class OnSellFragment extends BaseFragment implements IOnSellPageCallback,
         return inflater.inflate(R.layout.fragment_with_bar_layout, container, false);
     }
     @Override
-    protected int getRootViewResId() {
+    protected int getResId() {
         return R.layout.fragment_on_sell;
     }
     @Override

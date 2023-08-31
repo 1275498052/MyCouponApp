@@ -50,12 +50,13 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //加载根布局
+        //加载根布局rootView，即每个Fragment的根布局，4个Fragment根布局各不相同
         View view = loadRootView(inflater, container);
 
-        //添加一个空的容器视图
+        //虽然每个Fragment的根布局都不同，但里面都有一个FrameLayout坑用来填充具体内容，并且id都是相同的R.id.base_container，拿到这个container，通过addView将具体的Fragment的内容填充进去
         mBaseContainer = view.findViewById(R.id.base_container);
-        //在容器里放入当前界面加载成功的图和未成功的图
+
+        //将具体的Fragment布局填充到container中，包括4个内容Fragment，以及success，loading，empty，error四种状态的Fragment
         loadStatesView(inflater, container);
 
         //绑定butterKnife
@@ -77,16 +78,21 @@ public abstract class BaseFragment extends Fragment {
         return inflater.inflate(R.layout.base_fragment_layout, container,false);
     }
 
+    //默认初始化时必须调用，一次性添加四种状态的Fragment，但是根据状态来设置是否显示，在子类中重写setUpState判断状态
     private void loadStatesView(LayoutInflater inflater, ViewGroup container) {
+        //成功状态
         mSuccessView = loadSuccessView(inflater, container);
         mBaseContainer.addView(mSuccessView);
 
+        //加载中状态
         mLoadingView = loadLoadingView(inflater, container);
         mBaseContainer.addView(mLoadingView);
 
+        //错误状态
         mErrorView = loadErrorView(inflater, container);
         mBaseContainer.addView(mErrorView);
 
+        //空白状态
         mEmptyView = loadEmptyView(inflater, container);
         mBaseContainer.addView(mEmptyView);
 
@@ -130,14 +136,10 @@ public abstract class BaseFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_loading, container, false);
     }
 
-    /**
-     * 作用？？？
-     * @param inflater
-     * @param container
-     * @return
-     */
+    //加载成功
     protected View loadSuccessView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container) {
-        int id = getRootViewResId();
+        //加载内容
+        int id = getResId();
 //        LogUtils.d(this, "successView -->" + id);
         View successView = inflater.inflate(id, container, false);
         return successView;
@@ -167,6 +169,6 @@ public abstract class BaseFragment extends Fragment {
         //创建presenter
     }
 
-    //返回当前网络加载部分视图的xml文件Id
-    protected abstract int getRootViewResId();
+    //根据id，添加4种内容Fragment（在loadSuccessView中使用），由于这一系列方法一定会实现，所以设置成abstract，强制要求所有子Fragment重写
+    protected abstract int getResId();
 }

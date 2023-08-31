@@ -96,6 +96,7 @@ public class MainActivity extends BaseActivity implements IMainActivity{
      */
     private BaseFragment lastOneFragment = null;
 
+    //将已加载的Fragment储存，防止每次切换都进行销毁
     private void switchFragment(BaseFragment targetFragment) {
         FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
         if (lastOneFragment != null) {

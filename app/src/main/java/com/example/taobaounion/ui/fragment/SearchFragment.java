@@ -91,7 +91,7 @@ public class SearchFragment extends BaseFragment implements ISearchPageCallback,
 
 
     @Override
-    protected int getRootViewResId() {
+    protected int getResId() {
         return R.layout.fragment_search;
     }
 

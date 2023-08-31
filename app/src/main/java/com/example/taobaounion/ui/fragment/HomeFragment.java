@@ -42,7 +42,7 @@ public class HomeFragment extends BaseFragment implements IHomeCallback {
 
     //设置为successView
     @Override
-    protected int getRootViewResId() {
+    protected int getResId() {
         return R.layout.fragment_home;
     }
 

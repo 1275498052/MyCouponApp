@@ -99,7 +99,7 @@ public class HomePagerFragment extends BaseFragment implements ICategoryPagerCal
     }
 
     @Override
-    protected int getRootViewResId() {
+    protected int getResId() {
         return R.layout.fragment_home_pager;
     }
 

@@ -54,7 +54,7 @@ public class SelectedFragment extends BaseFragment implements ISelectedPageCallb
     }
 
     @Override
-    protected int getRootViewResId() {
+    protected int getResId() {
         return R.layout.fragment_selected;
     }
 
